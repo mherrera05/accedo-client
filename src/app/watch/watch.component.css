@@ -1,0 +1,4 @@
+.vg-icon-fullscreen:before {
+    font-family: FontAwesome !important;
+    content: "\f10c" !important;
+}

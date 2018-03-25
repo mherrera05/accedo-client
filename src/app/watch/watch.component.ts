@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { VgAPI } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
@@ -19,7 +19,7 @@ export class WatchComponent implements OnInit {
     private content;
     private api;
 
-  constructor(private router: ActivatedRoute, private api: VgAPI) {
+  constructor(private router: ActivatedRoute, private api: VgAPI, private navigation: Router) {
       this.router.params.subscribe(param => {
           this.content = param["url"];
       });
@@ -31,5 +31,11 @@ export class WatchComponent implements OnInit {
   onPlayerReady(api:VgAPI) {
     this.api = api;
     this.api.play();
+
+    this.api.getDefaultMedia().subscriptions.ended.subscribe(
+        ($event) => {
+            this.navigation.navigate(["/"]);
+         }
+    );
   }
 }
