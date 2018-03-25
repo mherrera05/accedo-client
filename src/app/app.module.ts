@@ -8,6 +8,9 @@ import { WatchComponent } from './watch/watch.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 
+import { VgCoreModule } from 'videogular2/core';
+import { VgControlsModule } from 'videogular2/controls';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'watch', component: WatchComponent },
@@ -23,6 +26,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    VgCoreModule,
+    VgControlsModule,
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
