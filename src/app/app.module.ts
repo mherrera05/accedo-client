@@ -13,7 +13,7 @@ import { VgControlsModule } from 'videogular2/controls';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'watch', component: WatchComponent },
+  { path: 'watch/:url', component: WatchComponent },
   { path: 'history', component: HistoryComponent },
 ];
 

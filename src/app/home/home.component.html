@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="col-md-2" *ngFor="let entry of entries">
-        <a  routerLink="/watch" routerLinkActive="active">
+        <a [routerLink]="['watch', content.url]" routerLinkActive="active" *ngFor="let content of entry.contents" params="{content: content.url}">
             <div class="col-md-12">
                 <img *ngFor="let image of entry.images" src="{{image.url}}" alt="" >
             </div>
