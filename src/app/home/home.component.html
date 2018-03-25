@@ -1,0 +1,12 @@
+<div class="col-md-12">
+    <div class="col-md-2" *ngFor="let entry of entries">
+        <div class="col-md-12">
+            <img *ngFor="let image of entry.images" src="{{image.url}}" alt="" >
+        </div>
+        <div class="col-md-12">
+            {{entry.title}}
+        </div>
+    </div>
+</div>
+
+

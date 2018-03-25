@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -7,20 +8,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
-  entries;
 
-  constructor (private httpClient: HttpClient) {
-
+  constructor (private router: Router) {
   }
 
   ngOnInit(): void {
-    this.httpClient.get('https://demo2697834.mockable.io/movies').subscribe(data => {
-        this.entries = data.entries;
-      console.log(this.entries);
-    });
-  }
-
-
+       this.router.navigate(['/']);
+   }
 }

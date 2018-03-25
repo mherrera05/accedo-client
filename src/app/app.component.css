@@ -8,6 +8,9 @@ div.header > .col-md-6{
     line-height: 60px;
     height: inherit;
 }
+div.header > .col-md-6 > a{
+    color: white;
+}
 div.col-md-12:nth-child(1) > .col-md-6:nth-child(2){
     text-align: right;
 }
