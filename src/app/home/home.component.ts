@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 declare var jquery:any;
 declare var $ :any;
 
@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit {
     });
 
     $(window).load(function() {
-    /*var film_roll = new FilmRoll({
+    var film_roll = new FilmRoll({
         configure_load: true,
         container: '#film_roll',
-      });*/
+      });
   });
     //$(".col-md-12").fadeOut("fast");
   }
@@ -37,11 +37,16 @@ export class HomeComponent implements OnInit {
       }
     }
 
-    this.httpClient.post('http://accedo.local/app_dev.php/histories', {
-      id: object["id"],
-      image: object["images"][0]["url"],
-      content: object["contents"][0]["url"],
-      title: object["title"]
+    const body = new HttpParams()
+      .set('id', object["id"])
+      .set('image', object["images"][0]["url"])
+      .set('content', object["contents"][0]["url"])
+      .set('title', object["title"])
+    ;
+
+    this.httpClient.post('http://accedo.local/app_dev.php/api/histories', body.toString(),
+    {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     })
       .subscribe(
         res => {
