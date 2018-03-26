@@ -11,7 +11,7 @@ import { VgBufferingModule } from 'videogular2/buffering';
   templateUrl: './watch.component.html',
   styleUrls: [
       './watch.component.css',
-      '../../../node_modules/videogular2/fonts/videogular.css'
+      /*'../../../node_modules/videogular2/fonts/videogular.css'*/
   ]
 })
 
