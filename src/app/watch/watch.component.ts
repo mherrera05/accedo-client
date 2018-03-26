@@ -17,7 +17,6 @@ import { VgBufferingModule } from 'videogular2/buffering';
 
 export class WatchComponent implements OnInit {
     private content;
-    private api;
 
   constructor(private router: ActivatedRoute, private api: VgAPI, private navigation: Router) {
       this.router.params.subscribe(param => {
