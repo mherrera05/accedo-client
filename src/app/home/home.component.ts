@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-declare var jquery:any;
-declare var $ :any;
+declare var $: any;
+declare var FilmRoll: any;
 
 @Component({
   selector: 'app-home',
@@ -21,13 +21,12 @@ export class HomeComponent implements OnInit {
         this.entries = data['entries'];
     });
 
-    $(window).load(function() {
+    $(window).load(() => {
     var film_roll = new FilmRoll({
         configure_load: true,
         container: '#film_roll',
       });
   });
-    //$(".col-md-12").fadeOut("fast");
   }
 
   setSelected(id) {

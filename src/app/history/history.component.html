@@ -2,12 +2,20 @@
     <table class="table table-bodered table-stripped">
         <thead>
             <tr>
-                <th>Titulo</th>
+                <th>Image</th><th>Title</th><th>Watched</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>300</td>
+            <tr *ngFor="let record of records">
+                <td>
+                    <img src="{{record.image}}" />
+                </td>
+                <td>
+                    {{record.title}}
+                </td>
+                <td>
+                    {{record.createdAt}}
+                </td>
             </tr>
         </tbody>
     </table>
