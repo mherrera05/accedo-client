@@ -22,7 +22,7 @@
        <vg-fullscreen></vg-fullscreen>
    </vg-controls>
 
-   <video #media [vgMedia]="media" id="singleVideo" preload="auto" crossorigin vgTheme="default">
-       <source src="{{content}}" type="video/mp4">
+   <video #media [vgMedia]="media" id="singleVideo" preload="auto" vgTheme="default">
+       <source src="{{content}}?callback=foo" type="video/mp4">
    </video>
 </vg-player>
