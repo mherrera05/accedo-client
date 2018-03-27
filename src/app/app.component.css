@@ -1,0 +1,16 @@
+div.header{
+    background-color: grey;
+    color: white;
+    min-height: 60px;
+}
+div.header > .col-md-6{
+    font-size: 20px;
+    line-height: 60px;
+    height: inherit;
+}
+div.header > .col-md-6 > a{
+    color: white;
+}
+div.col-md-12:nth-child(1) > .col-md-6:nth-child(2){
+    text-align: right;
+}

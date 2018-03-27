@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table table-bodered table-stripped">
+        <thead>
+            <tr>
+                <th>Image</th><th>Title</th><th>Watched</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records">
+                <td>
+                    <img src="{{record.image}}" class="image-list" />
+                </td>
+                <td>
+                    <a [routerLink]="['/watch', record.content]">{{record.title}}</a>
+                </td>
+                <td>
+                    {{record.created_at| date:'medium'}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    <p>Reading: https://demo2697834.mockable.io/movies</p>
+</div>
+<div class="col-md-12" id="film_roll">
+    <div class="col-md-2" *ngFor="let entry of entries">
+        <a [routerLink]="['watch', content.url]" (click)="setSelected(entry.id)" routerLinkActive="active" *ngFor="let content of entry.contents" params="{content: content.url}">
+            <div class="col-md-12">
+                <img class="image-carousel" *ngFor="let image of entry.images" src="{{image.url}}" alt="" >
+            </div>
+            <div class="col-md-12 title-carousel" >
+                {{entry.title}}
+            </div>
+        </a>
+    </div>
+</div>
+
+
